@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Setup PC Scripts</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="">
+
+    <style type="text/css">
+		.img-container{
+			max-width: 600px;
+		}
+
+		img{
+			width: 100%;
+            height: 500px;
+            object-fit: scale-down;
+        }
+        
+        .justify{
+            text-align: justify;
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/a054fa25c8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="nav-wrapper">
+        <a href="index.html">
+            <button class="back-button">
+                <i class="fas fa-chevron-left"></i>
+                Back
+            </button>
+        </a>
+
+        <ul id="navigation">
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="s2">
+        <div class="main-container">
+            <br>
+    
+            <div class="img-container">
+                <img src="images/installerPromo.png">
+            </div>
+    
+            <h3>Setup PC Scripts</h3>
+    
+            <p class="justify">
+                These set of PowerShell scripts were created when I was working as an IT support at EDMI Limited. 
+                <br>
+                <br>
+                At the time of my employment, the MIS department was in the midst of upgrading their existing batches of employee PCs.
+                These scripts were created to streamline the process of setting up multiple Windows PCs so that I may focus on other critical projects such as the IT audit.
+                <br>
+                <br>
+                The PowerShell scripts serve to intall essential software on Windows 7 and Windows 10 PCs.
+                <br>
+                <br>
+                installer.ps1 was the intial version of my installation script. It checks that the essential software were installed on the PC installs them when necessary.
+                <br>
+                <br>
+                chocoInstaller.ps1 is the updated version of my installation script. It makes use of the Chocolatey package manager to install and download essential software on the PC.
+                <br>
+                <br>
+                You may view the scripts <a target="_blank" href="https://github.com/tKeithSW/Setup-PC-Scripts">here.</a>
+            </p>
+        </div>
+    </section>
+  
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

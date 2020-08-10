@@ -1,0 +1,20 @@
+:root{
+    /*Blue.css*/
+	--mainColor:#eee8d5;
+	--secondaryColor:#fdf6e3;
+
+	--borderColor:#164D56;
+
+	--mainText:black;
+	--secondaryText:#4b5156;
+
+	--themeDotBorder:#FFF;
+
+	--previewBg:rgb(251,249,243,0.8);
+	--previewShadow:#bdb8a5;
+
+	--buttonColor: #bdb8a5;
+	--buttonTextColor: black;
+	--hoverColor: #b3a5bd;
+	--hoverTextColor: black;
+}
