@@ -36,28 +36,64 @@ function setTheme(mode){
     localStorage.setItem('theme', mode)
 }
 
-// Get the modal
+// Get modal, button, span element
 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
 var button = document.getElementById("viewCreditsBtn");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+// Open modal
 button.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// Close modal
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// Clsoe modal when click modal screen
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
+
+// Form constants
+const form = document.querySelector('form');
+const formResponse = document.querySelector('js-form-response');
+
+// Send form details as JSON to AWS API Gateway
+form.onsubmit = e => {
+    e.preventDefault();
+
+    // Prepare data to send
+    const data = {};
+    const formElements = Array.from(form);
+    formElements.map(input => (data[input.name] = input.value));
+
+    // Log what our lambda function will receive
+    console.log(JSON.stringify(data));
+
+    // Construct an HTTP request
+    var xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action, true);
+    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+    // Send the collected data as JSON
+    xhr.send(JSON.stringify(data));
+
+    // Callback function
+    xhr.onloadend = response => {
+    if (response.target.status === 200) {
+        // The form submission was successful
+        form.reset();
+        confirm('Your message has been sent. Thank you.');
+    } else {
+        // The form submission failed
+        confirm('Something went wrong');
+        console.error(JSON.parse(response.target.response).message);
+    }
+    };
+}
+  

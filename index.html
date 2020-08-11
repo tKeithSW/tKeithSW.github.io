@@ -182,23 +182,25 @@
     <section class="s2">
         <div class="main-container">
             <h3 style="text-align: center;">Get in touch</h3>
-            <!--Change to FormPlug-->
-            <form action="https://apigatewayurl.com" method="post" name="EmailForm" id="contact-form">
+            <!--Serverless function-->
+            <form action="https://jppvleegnd.execute-api.ap-southeast-1.amazonaws.com/dev/serverlessemail" method="post" name="EmailForm" id="contact-form">
                 <a name="contact"></a>
                 <label>Name</label>
                 <input class="input-field" type="text" name="name" placeholder="John Doe" required>
 
                 <label>Email</label>
-                <input class="input-field" type="text" name="email" placeholder="johndoe@email.com" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+                <input class="input-field" type="email" name="email" placeholder="johndoe@email.com" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
 
                 <label>Subject</label>
                 <input class="input-field" type="text" name="subject" placeholder="E.g. Interview" required>
 
                 <label>Message</label>
-                <textarea class="input-field" name="message" placeholder="Hello There!"></textarea>
+                <textarea class="input-field" name="message" placeholder="Hello There!" required></textarea>
 
                 <button class="submit-button" type="submit" value="Send">Submit</button>
             </form>
+
+            <p id="js-form-response"></p>
         </div>
 
         <footer>
